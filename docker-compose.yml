@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:13.8-bullseye
+    hostname: tmg-api-db
+    environment:
+      POSTGRES_PASSWORD: "tmg-api"
+      POSTGRES_USER: "tmg-api"
+      POSTGRES_DB: "tmg-api"
+    volumes:
+    - tmg-api-db-data:/var/lib/postgresql/data
+    restart: always
+    healthcheck:
+      test: pg_isready -U tmg-api
+      interval: 2s
+      timeout: 3s
+      retries: 40
+    ports:
+      - "5432:5432"
+
+volumes:
+  tmg-api-db-data:
+    name: tmg-api-db-data
