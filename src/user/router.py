@@ -3,9 +3,9 @@ from typing import List
 from fastapi import APIRouter
 from fastapi.param_functions import Depends
 
-from src.user.service import UserDAO
 from src.user.model import UserModel
 from src.user.schema import UserModelDTO, UserModelInputDTO
+from src.user.service import UserDAO
 
 router = APIRouter()
 

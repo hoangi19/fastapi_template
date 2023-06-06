@@ -1,12 +1,11 @@
-from importlib import metadata
 from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.responses import UJSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from src.router import api_router
 from src.lifetime import register_shutdown_event, register_startup_event
+from src.router import api_router
 
 APP_ROOT = Path(__file__).parent.parent
 

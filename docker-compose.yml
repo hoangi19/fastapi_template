@@ -17,7 +17,7 @@ services:
       timeout: 3s
       retries: 40
     ports:
-      - "5432:5432"
+    - "5432:5432"
 
 volumes:
   tmg-api-db-data:

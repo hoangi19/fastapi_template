@@ -7,9 +7,6 @@ from sqlalchemy.future import Connection
 
 from src.base import meta
 from src.settings import settings
-from src.user.model import UserModel
-
-from sqlalchemy.orm import declarative_base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

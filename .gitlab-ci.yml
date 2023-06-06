@@ -41,15 +41,15 @@ pytest:
   variables:
 
     # Postgresql variables
-    BASE2_DB_HOST: database
-    POSTGRES_PASSWORD: base2
-    POSTGRES_USER: base2
-    POSTGRES_DB: base2
+    TMG-API_DB_HOST: database
+    POSTGRES_PASSWORD: tmg-api
+    POSTGRES_USER: tmg-api
+    POSTGRES_DB: tmg-api
   script:
   - apt update
   - apt install -y wait-for-it
   - wait-for-it -t 180 $BASE2_DB_HOST:5432
-  - pytest -vv --junitxml=report.xml --cov="base2" .
+  - pytest -vv --junitxml=report.xml --cov="tmg-api" .
   - coverage xml
   artifacts:
     when: always
